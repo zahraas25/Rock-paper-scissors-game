@@ -1,29 +1,41 @@
-import random
+again = 'y'
 
-while True:
-    user_action = input("Enter a choice (rock, paper, scissors): ")
-    possible_actions = ["rock", "paper", "scissors"]
-    computer_action = random.choice(possible_actions)
-    print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+while (again == 'y'):
 
-    if user_action == computer_action:
-        print(f"Both players selected {user_action}. Tie!")
-    elif user_action == "rock":
-        if computer_action == "scissors":
-            print("Rock breaks scissors! You win!")
-        else:
-            print("Paper covers rock! You lose.")
-    elif user_action == "paper":
-        if computer_action == "rock":
-            print("Paper covers rock! You win!")
-        else:
-            print("Scissors cuts paper! You lose.")
-    elif user_action == "scissors":
-        if computer_action == "paper":
-            print("Scissors cuts paper! You win!")
-        else:
-            print("Rock breaks scissors! You lose.")
+    p1 = input("Player 1, choose rock, paper, or scissors: ")
+    p1 = p1.lower()
 
-    play_again = input("Do you want to play again? (y/n): ")
-    if play_again.lower() != "y":
-        break
+    print()
+
+    p2 = input("Player 2, choose rock, paper, or scissors: ")
+    p2 = p2.lower()
+
+    print()
+
+    if (p1 == "rock"):
+        if (p2 == "rock"):
+            print("Tie! Try again.")
+        elif (p2 == "paper"):
+            print("Player 2 wins :)")
+        elif (p2 == "scissors"):
+            print("Player 1 wins :)")
+    elif (p1 == "paper"):
+        if (p2 == "rock"):
+            print("Player 1 wins :)")
+        elif (p2 == "paper"):
+            print("Tie! Try again.")
+        elif (p2 == "scissors"):
+            print("Player 2 wins!")
+    elif (p1 == "scissors"):
+        if (p2 == "rock"):
+            print("Player 2 wins :)")
+        elif (p2 == "paper"):
+            print("Player 1 wins :)")
+        elif (p2 == "scissors"):
+            print("Tie! Try again :)")
+    else:
+        print("Invalid input, try again")
+
+    again = input("Type y to play again:")
+
+    print()
